@@ -55,17 +55,41 @@
 # #print(row)
 
 
-
-
-print("=== Kərpic 7 ===")   # Dövr (for) və şərt (if / else)
-rsrp_list = [-91.5, -108.1, -86.2, -103.3, -110.4]
-for v in rsrp_list:
-    number = int(input("please add a number "))
-    print(int(number)* v ) 
+# print("=== Kərpic 7 ===")   # Dövr (for) və şərt (if / else)
+# rsrp_list = [-91.5, -108.1, -86.2, -103.3, -110.4]
+# for v in rsrp_list:
+#     number = int(input("please add a number "))
+#     print(int(number)* v ) 
  
-  
- 
+# parts = input () .split()
+# values = []
+# for p in parts:
+#     values.append(float(p))
+# print(len(values))
+# print(max(values))
+# print(min(values))
+# print(sum(values) / len(values))
 
+
+
+# rsrp_list = [-91.5, -108.1, -86.2, -103.3, -110.4]
+# weak = 0
+# for v in rsrp_list:
+#     if v < -105:
+#         print(v, "- zeif")
+#         weak = weak + 1
+#     else:
+#         print(v, "- normal")
+# print("zeif olcme sayi", weak)        
+a = int(input())
+if a > 150:
+ print("good")
+elif a < 150:
+ print("not okay")
+elif a == 150:
+  print("meh")
+else:
+ print("404 error")
 
 
 
