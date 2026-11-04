@@ -106,6 +106,61 @@ print("=== Kərpic 9 ===")   # Nöqtə: metod
 
 
 print("=== Kərpic 10 ===")  # import — hazır alət qutusu
+data = "-91.5 -108.1 NA -86.2 -103.3 -105 NA -97.4 -89.0"
+parts = data.split()
+
+values = []
+missing = 0
+for p in parts:
+    if p == "NA":
+        missing += 1
+    else:
+        values.append(float(p))
+print("Ölçmə:", len(values))
+print("Boş:", missing)
 
 
+print("Min:", min(values))
+print("Max:", max(values))
+print("Orta qiymət:", round(sum(values) / len(values), 1))
 
+
+def level(v):
+    if v < -105:
+        return "zəif"
+    elif v < -95:
+        return "orta"
+    else:
+        return "yaxşı"
+
+for v in values:
+    print(v, "→", level(v))
+
+
+counts = {"zəif": 0, "orta": 0, "yaxşı": 0}
+for v in values:
+    s = level(v)
+    counts[s] += 1
+print(counts)
+
+
+share = round(counts["zəif"] / len(values) * 100, 1)
+print("Zəif payı:", share, "%")
+if share >= 30:
+    print("Qərar: briqadanı göndər")
+elif share >= 10:
+    print("Qərar: müşahidədə saxla")
+else:
+    print("Qərar: stansiya normaldır")
+
+
+current = 0
+best = 0
+for v in values:
+    if level(v) == "zəif":
+        current += 1
+        if current > best:
+            best = current
+    else:
+        current = 0
+print("Ən uzun zəif seriya:", best)
